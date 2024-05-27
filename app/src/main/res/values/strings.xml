@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PParcialCM2024</string>
+    <string name="lbl_InicioSesion">Inicio de Sesión</string>
+    <string name="lbl_AunRegistrado">¿Aún no estas registrado?</string>
+    <string name="txt_usuario">Usuario</string>
+    <string name="txt_contraseña">Contraseña</string>
+    <string name="btn_ingresar">Iniciar Sesión</string>
+    <string name="lbl_registrarse">Registrarse Ahora!</string>
 </resources>
