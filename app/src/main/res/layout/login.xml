@@ -8,7 +8,7 @@
     android:background="@drawable/login"
     android:gravity="center|end"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -72,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/blueLogin"
+                android:onClick="ingresar"
                 android:text="@string/btn_ingresar"
                 android:textSize="20sp"
                 app:cornerRadius="20dp"
@@ -95,6 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:onClick="enviarRegistrarse"
         android:text="@string/lbl_registrarse"
         android:textAlignment="center"
         android:textColor="@color/white"
