@@ -3,9 +3,12 @@ package com.example.pparcialcm2024;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Registrarse extends AppCompatActivity {
-    EditText usuario, clave;
-    Button btnregresar;
+    private EditText usuario, clave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +29,18 @@ public class Registrarse extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        usuario = (EditText) findViewById(R.id.txtUsuarioReg);
-        clave = (EditText) findViewById(R.id.txtClaveReg);
-        btnregresar= (Button) findViewById(R.id.btnRegresar);
+        usuario = findViewById(R.id.txtUsuarioReg);
+        clave = findViewById(R.id.txtClaveReg);
+        Button btnregresar = findViewById(R.id.btnRegresar);
+        RadioButton rb1 = (RadioButton) findViewById(R.id.rb1);
+        RadioButton rb2 = (RadioButton) findViewById(R.id.rb2);
+        CheckBox checkBox1 = (CheckBox) findViewById(R.id.check1);
+        CheckBox checkBox2 = (CheckBox) findViewById(R.id.check2);
+        Spinner sp1 = (Spinner) findViewById(R.id.spinner);
+
+        String [] opciones = {"opción1","opción2"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item_abel,opciones);
+        sp1.setAdapter(adapter);
     }
 
     //Metodo para el btnRegresar
