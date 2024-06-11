@@ -8,18 +8,6 @@
     android:background="@drawable/fondo"
     tools:context=".Registrarse">
 
-    <Button
-        android:id="@+id/btnRegresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="57dp"
-        android:hint="@string/btn_regresar"
-        android:onClick="enviarLogin"
-        android:textColorHint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
     <EditText
         android:id="@+id/txtClaveReg"
         android:layout_width="wrap_content"
@@ -27,68 +15,41 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="173dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txt_contraseña"
         android:inputType="textPassword"
+        android:maxLength="10"
         android:minHeight="48dp"
         android:textColorHint="#616161"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsuarioReg"
-        android:autofillHints="" />
-
-    <CheckBox
-        android:id="@+id/check1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/check1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="230dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check2" />
-
-    <CheckBox
-        android:id="@+id/check2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/check2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check1" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUsuarioReg" />
 
     <EditText
         android:id="@+id/txtUsuarioReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="36dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txt_usuario"
         android:inputType="text"
+        android:maxLength="10"
         android:minHeight="48dp"
         android:textColorHint="#616161"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtClaveReg">
+        app:layout_constraintTop_toBottomOf="@+id/textViewSexo">
 
         <RadioButton
             android:id="@+id/rb1"
@@ -102,5 +63,90 @@
             android:layout_height="wrap_content"
             android:text="@string/rb2" />
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGustos" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/btn_regresar"
+        android:onClick="enviarLogin"
+        android:textColorHint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <CheckBox
+        android:id="@+id/check1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/check1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeporte" />
+
+    <CheckBox
+        android:id="@+id/check2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/check2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check1" />
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="229dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/textViewTitulo"
+        android:textColor="#002BFE"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/textViewSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/textViewSexo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtClaveReg" />
+
+    <TextView
+        android:id="@+id/textViewDeporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/textViewDeporte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textViewGustos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/textViewGustos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
