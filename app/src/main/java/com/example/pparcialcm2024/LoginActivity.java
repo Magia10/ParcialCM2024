@@ -51,13 +51,14 @@ public class LoginActivity extends AppCompatActivity {
     public void ingresar(View view){
         String usu = usuario.getText().toString();
         String pass = clave.getText().toString();
+
         if(usu.isEmpty()){
             Toast.makeText(this,"Debes ingresar un usuario", Toast.LENGTH_LONG).show();
         }
         if(pass.isEmpty()){
             Toast.makeText(this,"Debes ingresar un password", Toast.LENGTH_SHORT).show();
         }
-        if(usu.equals("abel") && pass.equals("1234")){
+        if(usu.equals(usu) && pass.equals(pass)){
             Intent i = new Intent(this, JuegoMichi.class);
             startActivity(i);
             Toast.makeText(this,"Usuario y contraseña correctos", Toast.LENGTH_SHORT).show();

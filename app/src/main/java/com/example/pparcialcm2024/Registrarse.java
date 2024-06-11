@@ -41,6 +41,12 @@ public class Registrarse extends AppCompatActivity {
 
     //Metodo para el btnRegresar
     public void enviarLogin(View view) {
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
+
+    }
+
+    public void Registrar(View view) {
         String usu = usuario.getText().toString();
         String pass = clave.getText().toString();
 
@@ -52,11 +58,13 @@ public class Registrarse extends AppCompatActivity {
             Toast.makeText(this, "Debes ingresar un password", Toast.LENGTH_SHORT).show();
             return;
         }
-            Intent i = new Intent(this, LoginActivity.class);
-            i.putExtra("usuarioReg", usuario.getText().toString());
-            i.putExtra("claveReg", clave.getText().toString());
-            startActivity(i);
+        Intent i = new Intent(this, LoginActivity.class);
+        i.putExtra("usuarioReg", usuario.getText().toString());
+        i.putExtra("claveReg", clave.getText().toString());
+        startActivity(i);
 
     }
+
+
 
 }
