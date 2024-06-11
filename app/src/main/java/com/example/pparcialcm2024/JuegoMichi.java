@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Objects;
+
 public class JuegoMichi extends AppCompatActivity {
     ImageView imageView1,imageView2,imageView3,imageView4,imageView5,
             imageView6,imageView7,imageView8,imageView9,imgTurnoX, imgTurnoO;
@@ -43,17 +45,17 @@ public class JuegoMichi extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        imageView1 = (ImageView) findViewById(R.id.imageView1);
-        imageView2 = (ImageView) findViewById(R.id.imageView2);
-        imageView3 = (ImageView) findViewById(R.id.imageView3);
-        imageView4 = (ImageView) findViewById(R.id.imageView4);
-        imageView5 = (ImageView) findViewById(R.id.imageView5);
-        imageView6 = (ImageView) findViewById(R.id.imageView6);
-        imageView7 = (ImageView) findViewById(R.id.imageView7);
-        imageView8 = (ImageView) findViewById(R.id.imageView8);
-        imageView9 = (ImageView) findViewById(R.id.imageView9);
-        imgTurnoX = (ImageView) findViewById(R.id.imgTurnoX);
-        imgTurnoO = (ImageView) findViewById(R.id.imgTurnoO);
+        imageView1 = findViewById(R.id.imageView1);
+        imageView2 = findViewById(R.id.imageView2);
+        imageView3 = findViewById(R.id.imageView3);
+        imageView4 = findViewById(R.id.imageView4);
+        imageView5 = findViewById(R.id.imageView5);
+        imageView6 = findViewById(R.id.imageView6);
+        imageView7 = findViewById(R.id.imageView7);
+        imageView8 = findViewById(R.id.imageView8);
+        imageView9 = findViewById(R.id.imageView9);
+        imgTurnoX = findViewById(R.id.imgTurnoX);
+        imgTurnoO = findViewById(R.id.imgTurnoO);
         imgTurnoX.setBackgroundColor(Color.RED);
     }
 
@@ -75,7 +77,7 @@ public class JuegoMichi extends AppCompatActivity {
                 }
             }
         }
-        if(turno=="x"){
+        if(Objects.equals(turno, "x")){
             view.setBackgroundResource(R.drawable.gato_x);
             imgTurnoX.setBackgroundColor(Color.WHITE);
             imgTurnoO.setBackgroundColor(Color.RED);
@@ -90,8 +92,8 @@ public class JuegoMichi extends AppCompatActivity {
 
         for (int i = 0; i < contadorX; i++) {
             boolean gano = true;
-            for (int j = 0; j < altoMatriz; j++) {
-                gano = coincideGanador(matrizGanadora[j], posicionesX);
+            for (int[] ints : matrizGanadora) {
+                gano = coincideGanador(ints, posicionesX);
                 if (gano) {
                     ganador = "x";
                     Toast.makeText(this, "Gano X", Toast.LENGTH_LONG).show();

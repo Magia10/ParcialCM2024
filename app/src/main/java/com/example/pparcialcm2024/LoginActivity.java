@@ -31,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        usuario = (EditText) findViewById(R.id.txtUsuario);
-        clave = (EditText) findViewById(R.id.txtClave);
-        lblRegistrarse = (TextView) findViewById(R.id.lblRegistrarse);
-        btnregistrar= (Button) findViewById(R.id.btnIngresar);
+        usuario = findViewById(R.id.txtUsuario);
+        clave = findViewById(R.id.txtClave);
+        lblRegistrarse = findViewById(R.id.lblRegistrarse);
+        btnregistrar= findViewById(R.id.btnIngresar);
 
         String datoUsuario = getIntent().getStringExtra("usuarioReg");
         usuario.setText(datoUsuario);
@@ -51,10 +51,10 @@ public class LoginActivity extends AppCompatActivity {
     public void ingresar(View view){
         String usu = usuario.getText().toString();
         String pass = clave.getText().toString();
-        if(usu.length()==0){
+        if(usu.isEmpty()){
             Toast.makeText(this,"Debes ingresar un usuario", Toast.LENGTH_LONG).show();
         }
-        if(pass.length()==0){
+        if(pass.isEmpty()){
             Toast.makeText(this,"Debes ingresar un password", Toast.LENGTH_SHORT).show();
         }
         if(usu.equals("abel") && pass.equals("1234")){
